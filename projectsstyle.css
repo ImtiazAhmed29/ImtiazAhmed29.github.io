@@ -1,0 +1,31 @@
+#navbar {
+    font-family: Helvetica;
+    background-color: rgb(126, 126, 126);
+    color: aliceblue;
+    font-size: 32px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 5px solid;
+    border-radius: 20px;
+}
+
+#title {
+    padding-right: 200px;
+}
+
+.items:hover {
+    background-color: rgb(172, 172, 172);
+    opacity: 0.5;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.boxtitle {
+    font-weight: bold;
+}
