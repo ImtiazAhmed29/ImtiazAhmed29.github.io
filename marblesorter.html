@@ -1,0 +1,241 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="marblesorter.css">
+    <title>Imtiaz Ahmed - Marble Sorter</title>
+</head>
+<body>
+    <div id="navbar">
+        <div id="bartitle">Imtiaz Ahmed</div>
+        <a href="index.html"><div class="items">Home</div></a> 
+        <a href="experience.html"><div class="items">Experience</div></a> 
+        <a href="projects.html"><div class="items">Projects</div></a> 
+    </div>
+    <div class="title">
+        <h1>Color-based Marble Sorter</h1>
+        <h2>Platform: VEX | Sensing: Reflected Light | Control: RobotC | Classification: 4/5 Reliable</h2>
+    </div>
+    <div class = "header" id="marbleheader">
+        <div id = "shortdesc">
+            <h2>Color-based marble sorting system using sensor-driven classification and servo-actuated routing.</h2>
+            <h3>Designed to identify and sort 5 marble categories through sensor thresholding and automated mechanical diversion. Final prototype achieved reliable classification for 4 categories.</h3>
+        </div>
+        <div class="hero-media">
+            <img id="top-pic" src="marblesorterpic.png">
+        </div>
+    </div>
+    <div class="section">
+        <h2>Overview</h2>
+        <div class="text-placeholder">
+            <p>This project was developed as an automated marble classification and routing system using the VEX platform. The machine isolates individual marbles, detects their color using reflected light intensity values, and routes them into corresponding output containers through a servo-actuated diversion mechanism.</p>
+            <p>The system was designed to classify 5 marble categories using threshold-based sensor logic, including three marbles of solid coloration and two smaller wooden and silver marble types. Final performance achieved reliable sorting for 4 categories, with silver marbles affected by overlapping sensor-response ranges and calibration sensitivity.</p>
+        </div>
+    </div>
+    <div class="featuresection" id="separator">
+        <div>
+            <img class="pic" src="separator.png">
+        </div>
+        <div>
+            <p>
+            The separator subsystem isolated individual marbles
+            before entering the sensing basin to ensure
+            consistent sensor readings and prevent interference
+            between consecutive measurements.
+        </p>
+
+        <p>
+            A 3D-printed rotating gate mechanism regulated marble flow
+            and maintained spacing between marbles during
+            operation. The gate would alternate between having the hole face the marble entry point and having it face downwards to allow the marble to drop.
+        </p>
+
+        <p>
+            One challenge was persistent double-feeding, which occured when a smaller marble entered the separator with a larger marble or another smaller marble. This could be avoided by making the separator hole significantly shallower, preventing marbles from stacking.
+        </p>
+        </div>
+    </div>
+    <div class="featuresection" id="sensingbasin">
+        <div>
+
+<p>
+    The sensing basin positioned marbles next a
+    reflected-light sensor for threshold-based
+    classification while temporarily holding each
+    marble in place during sensing.
+</p>
+
+<p>
+    A servo-actuated pivoting track directed marbles
+    toward the sensing region before releasing them
+    into the routing subsystem after classification.
+</p>
+
+<p>
+    The sensing area was enclosed to reduce ambient
+    light contamination and improve reading consistency
+    between marble categories.
+</p>
+<p>
+    A limitation of this method was the unreliability of light sensing for silver marbles, likely due to the high reflectivity causing inconsistencies in the light reflected towards the sensor.
+</p>
+        </div>
+        <div>
+            <img src="sensingbasin.png">
+        </div>
+    </div>
+    <div class="featuresection" id="catchmentbasin">
+        <div>
+            <img src="catchmentbasin.png">
+        </div>
+        <div>
+<p>
+    The routing basin redirected classified marbles
+    into category-specific collection containers
+    using a servo-driven rotational mechanism.
+</p>
+
+<p>
+    A central gear assembly rotated a five-cup
+    collection system to align the appropriate
+    output container with the marble exit path
+    after classification.
+</p>
+
+<p>
+    Servo positioning angles were mapped to sensor
+    threshold ranges corresponding to each marble
+    category.
+</p>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Technical Details
+        </h2>
+         <div class="text-placeholder">
+<p>
+        The system used threshold-based classification
+        logic to map reflected-light sensor readings
+        to corresponding marble categories.
+    </p>
+
+    <p>
+        Sensor values were compared against predefined
+        ranges calibrated through repeated testing
+        under controlled lighting conditions.
+    </p>
+
+    <p>
+        The control logic coordinated:
+    </p>
+
+    <ul>
+        <li>Marble release timing</li>
+        <li>Sensor acquisition</li>
+        <li>Servo-actuated routing</li>
+        <li>Sequential sorting operation</li>
+    </ul>
+         </div>
+    </div>
+     <div class="section">
+         <h2>Code</h2>
+         <div class="text-placeholder">
+            <p>
+    The sorting logic used threshold-based
+    classification to associate sensor readings
+    with predefined marble categories.
+</p>
+<p>
+    Marbles were tested in the sensing basin
+</p>
+        </div>
+        <pre><code>
+                #pragma config(Sensor, in1,    lineFollower,   sensorLineFollower)
+#pragma config(Motor,  port7,           gateServo,     tmotorServoStandard, openLoop)
+#pragma config(Motor,  port8,           sorterServo,   tmotorServoStandard, openLoop)
+#pragma config(Motor,  port9,           colorServo,    tmotorServoStandard, openLoop)
+//*!!Code automatically generated by 'ROBOTC' configuration wizard               !!*//
+
+//+++++++++++++++++++++++++++++++++++++++++++++| MAIN |+++++++++++++++++++++++++++++++++++++++++++++++
+task main()
+{
+	wait(1);
+	setServo(colorServo, -60);
+	setServo(sorterServo, -127);
+	while(1==1){
+		setServo(gateServo, 127);
+		wait(1);
+		setServo(gateServo, -127);
+		wait(2);
+		if(1000 > SensorValue[lineFollower]){ 
+			setServo(sorterServo, -127);
+			wait(1);
+			setServo(colorServo, 100);
+			wait(1);
+			setServo(colorServo, -60);
+		}
+		else if(1800 > SensorValue[lineFollower]){ 
+			setServo(sorterServo, -89);
+			wait(1);
+			setServo(colorServo, 100);
+			wait(1);
+			setServo(colorServo, -60);
+		}
+		else if(2100 > SensorValue[lineFollower]){ 
+			setServo(sorterServo, -51);
+			wait(1);
+			setServo(colorServo, 100);
+			wait(1);
+			setServo(colorServo, -60);
+		}
+		else if(2700 > SensorValue[lineFollower]){ 
+			setServo(sorterServo, -13);
+			wait(1);
+			setServo(colorServo, 100);
+			wait(1);
+			setServo(colorServo, -60);
+		}
+		else{
+			setServo(sorterServo, 25);
+			wait(1);
+			setServo(colorServo, 100);
+			wait(1);
+			setServo(colorServo, -60);
+		}
+	}
+}
+        </code></pre>
+    </div>
+    <div class="section">
+        <h2>Results and Improvements</h2>
+        <div class="featuresection">
+            <div>
+            <video id="demovid" src="IMG_9362 (1).mp4" controls></video>
+        </div>
+         <div class="text-placeholder">
+             <p>
+    The final prototype successfully demonstrated
+    automated marble classification and routing
+    using threshold-based sensing and servo-actuated
+    mechanical diversion.
+</p>
+
+<p>
+    Reliable classification was achieved for
+    4 marble categories, while visually similar
+    categories produced overlapping sensor
+    response ranges under certain conditions.
+</p>
+
+<p>
+    Future improvements would include improved
+    sensing methods, controlled illumination,
+    and adaptive calibration for greater
+    classification accuracy.
+</p>
+        </div>
+        </div>
+                
+    </div>
+</body>
+</html>

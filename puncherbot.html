@@ -1,0 +1,210 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pingpongball.css">
+    <title>Imtiaz Ahmed - Marble Sorter</title>
+</head>
+<body>
+    <div id="navbar">
+        <div id="bartitle">Imtiaz Ahmed</div>
+        <a href="index.html"><div class="items">Home</div></a> 
+        <a href="experience.html"><div class="items">Experience</div></a> 
+        <a href="projects.html"><div class="items">Projects</div></a> 
+    </div>
+    <div class="title">
+        <h1>Linkage-actuated Robotic Arm</h1>
+        <h2>Platform: Arduino | Actuation: 9g Servo Motors | Mechanisms: Four-bar, Bell-crank</h2>
+    </div>
+    <div class = "header" id="marbleheader">
+        <div id = "shortdesc">
+            <h2>
+                Multi-link robotic arm using coupled four-bar linkages,
+                bell-crank mechanisms, and servo-driven actuation.
+            </h2>
+
+            <h3>
+                Designed as a mechanically coupled arm system where
+                shoulder motion drives synchronized elbow and claw
+                behavior through passive linkage geometry and
+                software-compensated control logic.
+            </h3>
+        </div>
+        <div class="hero-media">
+            <img id="top-pic" src="linkagepic.png">
+        </div>
+    </div>
+    <div class="section">
+
+        <h2>Overview</h2>
+
+        <div class="text-placeholder">
+
+            <p>
+                This project was developed as a mechanically coupled robotic arm
+                using multiple linkage-driven subsystems actuated by compact
+                servo motors. The arm uses a ground-mounted four-bar linkage
+                to actuate shoulder motion, while additional passive linkage
+                systems mechanically coordinate elbow articulation and claw movement.
+            </p>
+
+            <p>
+                The design emphasizes mechanical motion transfer and linkage
+                interaction over direct joint-by-joint actuation. Current
+                development focuses on compensating for coupled claw and elbow
+                motion through software mapping and improving motion smoothness
+                during potentiometer-controlled operation.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="featuresection" id="shoulder-system">
+
+        <div>
+            <video id="demovid" src="shoulder.mp4" controls></video>
+        </div>
+
+        <div>
+
+            <h2>Shoulder Actuation System</h2>
+
+        <p>
+            The shoulder joint is directly actuated using a base-mounted
+            9g servo coupled to the primary arm link through a rotating
+            pivot assembly.
+        </p>
+
+        <p>
+            Because the shoulder actuator is positioned close to the base,
+            direct-drive actuation was selected instead of a linkage-driven
+            approach in order to reduce mechanical complexity and simplify
+            motion control.
+        </p>
+
+        <p>
+            The shoulder joint provides the main lifting motion for the arm while
+supporting the mechanically coupled elbow and claw subsystems.
+        </p>
+
+        </div>
+
+    </div>
+
+    <div class="featuresection" id="elbow-system">
+
+        <div>
+
+            <h2>Elbow & Claw Coupling</h2>
+
+<p>
+            The elbow subsystem is actuated through a four-bar linkage
+            integrated into the lower arm structure. The elbow control servo is attached to a plate which is itself attached near the bottom of the primary arm link, keeping servo mass low to the ground.
+        </p>
+        <p>
+            The claw uses a bell-crank linkage to actuate the scissor linkage making up the claw, with linearity being ensured using a pin attached to the upper claw control link, going through the claw links into a slot on the main upper arm link.
+        </p>
+        <p>
+            The claw control servo is attached to this same plate. The fact that both servos have the same placement in the mechanical motion chain while the end effectors have different placements, with the claw being downstream from the elbow, results in coupled mechanical motion between the elbow and the claw. This forces compensation by the claw control servo to maintain the same claw position while the elbow moves.
+        </p>
+
+        </div>
+
+        <div>
+            <video id="demovid" src="elbow.mp4" controls></video>
+        </div>
+
+    </div>
+
+    <div class="featuresection" id="control-system">
+
+        <div>
+            <img class="project-image" src="robotarmrealbuild.png">
+        </div>
+
+        <div>
+
+            <h2>Control System</h2>
+
+            <p>
+                The arm is currently controlled using potentiometer-based
+                manual input through an Arduino platform. Potentiometers
+                independently command shoulder and elbow motion during testing.
+            </p>
+
+            <p>
+                Current software development focuses on compensating for the
+                mechanically coupled claw behavior by defining open and closed
+                claw states and mapping required claw offsets across different
+                elbow positions.
+            </p>
+
+            <p>
+                Linear-regression-based compensation is currently being tested
+                to estimate the claw position required to maintain stable grasp
+                states throughout arm motion.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Engineering Challenges</h2>
+
+        <div class="text-placeholder">
+
+            <p>
+                A primary challenge in the project is the nonlinear coupling
+                between elbow motion and claw position caused by the passive
+                linkage geometry. Changes in elbow angle unintentionally alter
+                claw opening state, requiring software-based compensation.
+            </p>
+
+            <p>
+                Current development focuses on experimentally mapping elbow
+                positions to corresponding claw correction values in order
+                to maintain consistent open and closed claw states during motion.
+            </p>
+
+            <p>
+                Additional challenges include jerky servo movement during
+                potentiometer-controlled operation, likely caused by noisy
+                analog input readings and rapid position updates.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Future Improvements</h2>
+
+        <div class="text-placeholder">
+
+            <p>
+                Future development will focus on improving motion smoothness,
+                refining claw-compensation algorithms, and reducing mechanical
+                backlash within the linkage assemblies.
+            </p>
+
+            <p>
+                Additional improvements may include filtered potentiometer
+                inputs, trajectory smoothing, and experimentally derived
+                nonlinear compensation models for claw positioning.
+            </p>
+
+            <p>
+                Long-term development could also explore semi-autonomous
+                positioning and inverse-kinematics-based control.
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

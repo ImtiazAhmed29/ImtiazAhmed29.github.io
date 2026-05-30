@@ -1,5 +1,5 @@
 #navbar {
-    font-family: Helvetica;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: rgb(126, 126, 126);
     color: aliceblue;
     font-size: 32px;
@@ -10,14 +10,15 @@
     padding-bottom: 20px;
     border: 5px solid;
     border-radius: 20px;
+    margin-bottom: 50px;
+
 }
 
-#title {
+#bartitle {
     padding-right: 200px;
 }
 
 .items:hover {
-    background-color: rgb(172, 172, 172);
     opacity: 0.5;
 }
 
@@ -26,6 +27,70 @@ a {
     color: aliceblue;
 }
 
+img {
+    border-radius: 20px;
+}
+
 .boxtitle {
     font-weight: bold;
+}
+
+.projectboxes {
+    display: flex;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.card {
+    border-radius: 20px;
+}
+
+#topRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgb(81, 81, 81);
+}
+
+#project-card1 {
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(126, 126, 126);
+}
+
+#project-card1:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(145, 145, 145);
+    opacity: 0.5;
+}
+
+img {
+    width: 300px;
+}
+
+#project-card2 {
+    padding: 20px;
+    background-color: rgb(126, 126, 126);
+}
+
+#project-card2:hover {
+    background-color: rgb(172, 172, 172);
+    opacity: 0.5;
+}
+
+#project-card3 {
+    padding: 20px;
+    background-color: rgb(126, 126, 126);
+}
+
+#project-card3:hover {
+    background-color: rgb(172, 172, 172);
+    opacity: 0.5;
 }
