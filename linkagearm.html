@@ -2,15 +2,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pingpongball.css">
-    <title>Imtiaz Ahmed - Marble Sorter</title>
+    <link rel="stylesheet" href="linkage.css">
+    <title>Imtiaz Ahmed - Linkage-actuated Arm</title>
 </head>
 <body>
     <div id="navbar">
         <div id="bartitle">Imtiaz Ahmed</div>
-        <a href="index.html"><div class="items">Home</div></a> 
-        <a href="experience.html"><div class="items">Experience</div></a> 
-        <a href="projects.html"><div class="items">Projects</div></a> 
+        <div id="menu">
+            <a href="index.html"><div class="items">Home</div></a> 
+            <a href="experience.html"><div class="items">Experience</div></a> 
+            <a href="projects.html"><div class="items">Projects</div></a> 
+        </div>
     </div>
     <div class="title">
         <h1>Linkage-actuated Robotic Arm</h1>
@@ -118,32 +120,20 @@ supporting the mechanically coupled elbow and claw subsystems.
     </div>
 
     <div class="featuresection" id="control-system">
-
-        <div>
-            <img class="project-image" src="robotarmrealbuild.png">
-        </div>
-
         <div>
 
             <h2>Control System</h2>
 
             <p>
-                The arm is currently controlled using potentiometer-based
-                manual input through an Arduino platform. Potentiometers
-                independently command shoulder and elbow motion during testing.
+                The arm is currently controlled using potentiometer-based manual input through an Arduino platform. Potentiometers independently command shoulder and elbow motion during testing.
             </p>
 
             <p>
-                Current software development focuses on compensating for the
-                mechanically coupled claw behavior by defining open and closed
-                claw states and mapping required claw offsets across different
-                elbow positions.
+                Current software development focuses on compensating for the mechanically coupled claw behavior by defining open and closedclaw states and mapping required claw offsets across different elbow positions.
             </p>
 
             <p>
-                Linear-regression-based compensation is currently being tested
-                to estimate the claw position required to maintain stable grasp
-                states throughout arm motion.
+                The OnShape assembly was used to approximately determine which claw angles were required to maintain open or closed states at various elbow angles. It was determined that for the closed state, the claw angle would be approximately -1 * (elbowAngle) + 135, while for the open state, it would be approximately -1 * (elbowAngle) + 180. Both the elbow and claw angles must be between 0 and 180, forcing the angles to be capped in software.
             </p>
 
         </div>
@@ -164,17 +154,8 @@ supporting the mechanically coupled elbow and claw subsystems.
             </p>
 
             <p>
-                Current development focuses on experimentally mapping elbow
-                positions to corresponding claw correction values in order
-                to maintain consistent open and closed claw states during motion.
+                Additionally, arm movement has been jerky or unresponsive at times, which may be caused by insufficient torque from the 9g servos or highly variable inputs from potentiometers.
             </p>
-
-            <p>
-                Additional challenges include jerky servo movement during
-                potentiometer-controlled operation, likely caused by noisy
-                analog input readings and rapid position updates.
-            </p>
-
         </div>
 
     </div>
@@ -186,22 +167,11 @@ supporting the mechanically coupled elbow and claw subsystems.
         <div class="text-placeholder">
 
             <p>
-                Future development will focus on improving motion smoothness,
-                refining claw-compensation algorithms, and reducing mechanical
-                backlash within the linkage assemblies.
+                Future development will focus on imodifying the arm to function with stronger servos, as a lack of torque is likely the primary reason for jerky movement. Additionally, refining claw-compensation algorithms will be a priority.
             </p>
 
-            <p>
-                Additional improvements may include filtered potentiometer
-                inputs, trajectory smoothing, and experimentally derived
-                nonlinear compensation models for claw positioning.
+            <p>.
             </p>
-
-            <p>
-                Long-term development could also explore semi-autonomous
-                positioning and inverse-kinematics-based control.
-            </p>
-
         </div>
 
     </div>
