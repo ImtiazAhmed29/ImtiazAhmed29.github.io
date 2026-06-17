@@ -12,6 +12,12 @@
     border-radius: 20px;
 }
 
+.title {
+    color: rgb(100, 100, 100);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
 #bartitle {
     margin-right: auto;
     margin-left: clamp(16px, 4vw, 200px);
@@ -28,6 +34,7 @@
     display: flex;
     padding-right: clamp(16px, 4vw, 200px);
 }
+
 a {
     text-decoration: none;
     color: aliceblue;
@@ -35,6 +42,7 @@ a {
 
 .boxtitle {
     font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #marbleheader {
@@ -43,13 +51,15 @@ a {
     justify-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    color: rgb(100, 100, 100);
 }
 
 #shortdesc {
     padding-right: 30px;
     margin:25px;
     align-content: center;
-    width: 400px; ;
+    width: 400px;
+    color: rgb(100, 100, 100);
 }
 
 #top-pic {
@@ -80,6 +90,11 @@ a {
     margin-bottom: 20px;
 }
 
+#launchermedia {
+    display:flex;
+    flex-direction: column;
+}
+
 img {
     border-radius: 20px;
     padding: 10px;
@@ -107,6 +122,18 @@ video {
     margin-left: 100px;
     margin-right: 100px;
     margin-bottom: 20px;
+    gap:20px;
+}
+
+.featuresectionsp {
+    display: flex;
+    background-color: rgb(126, 126, 126);
+    color: aliceblue;
+    border-radius: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    gap: 40px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .prototypecard {
@@ -117,4 +144,141 @@ video {
     flex-direction: column;
     align-items: center;
     padding: 10px;
+}
+
+#hoopmedia {
+    display: flex;
+}
+
+@media (max-width: 1345px) and (min-width: 1150px) {
+    .cardsection {
+    display: flex;
+    justify-content: space-between;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    gap:20px;
+    }
+}
+
+@media (max-width: 1149px) and (min-width: 913px) {
+    .cardsection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 20px;
+    gap:20px;
+}
+
+    #hoopmedia {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 912px) {
+    #navbar {
+        flex-direction: row;
+        text-align: right;
+    }
+
+    #menu {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .items {
+        margin: 10px;
+    }
+        
+    #marbleheader {
+        flex-direction: column;  
+        gap: 20px;
+        padding: 20px;
+        text-align: center;
+        align-self: center;
+    }
+
+    #top-pic {
+        max-width: 80%;
+        height: auto;
+    }
+
+    #shortdesc {
+        margin: 10px;
+        max-width: 90%;
+        align-self: center;
+    }
+
+    .featuresection{
+        flex-direction: column;   
+        margin: 20px;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .featuresectionsp {
+        flex-direction: column;   
+        gap: 20px;
+    }
+
+    .pic {
+        max-width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    #launcherpics2{
+        max-width: 50%;
+        align-items: center;
+        align-self: center;
+    }
+
+    .section {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 20px;
+    }
+
+    video {
+        display: flex;
+        max-width: 100%;
+        height: auto;
+        align-self: center;
+    }
+
+    .demovid {
+        max-width: 90%;
+    }
+
+    .cardsection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    gap:20px;
+    }
+
+    #launchermedia {
+        display: flex;
+        align-items: center;
+    }
+
+    #hoopmedia {
+        align-self: center;
+    }
 }

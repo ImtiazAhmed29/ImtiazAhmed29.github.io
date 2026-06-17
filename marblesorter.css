@@ -14,7 +14,7 @@
 
 #bartitle {
     margin-right: auto;
-    margin-left: clamp(16px, 4vw, 200px);
+    margin-left: clamp(16px, 4vw, 20px);
 }
 
 .items{
@@ -37,20 +37,35 @@ a {
     font-weight: bold;
 }
 
+.title {
+    display: flex;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(100, 100, 100);
+}
+
 #marbleheader {
     display: flex;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(100, 100, 100);
+    align-items: center;
     justify-content: center;
+    text-align: center;
     padding-bottom: 20px;
+    margin: 0 auto;
+}
+
+#top-pic {
+    max-width: 400px;
 }
 
 #shortdesc {
-    padding-right: 30px;
     margin:25px;
     align-content: center;
-    width: 400px; ;
+    max-width: 400px;
 }
-
 
 
 .featuresection {
@@ -62,15 +77,7 @@ a {
     margin: 0 100px 20px 100px;
     display: flex;
     gap: 40px;
-    align-items: flex-start;
-    box-sizing: border-box;
 }
-
-.featuresection > div {
-    flex: 1;
-    min-width: 0;
-}
-
 
 
 .section {
@@ -84,17 +91,96 @@ a {
     margin-bottom: 20px;
 }
 
+.featuresectionsp {
+    display: flex;
+    background-color: rgb(126, 126, 126);
+    color: aliceblue;
+    border-radius: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    gap: 40px;
+    padding: 0px;
+    margin: 0px;
+}
 .pic {
     border-radius: 20px;
     padding: 20px;
-
-    width: 100%;
     max-width: 400px;
     height: auto;
-
-    display: block;
 }
 
 video {
-    max-width: 500px;
+    max-width: 100%;
 }
+
+
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: row;
+        text-align: right;
+    }
+
+    #menu {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .items {
+        margin: 10px;
+    }
+    
+    #marbleheader {
+        flex-direction: column;  
+        gap: 20px;
+        padding: 20px;
+        text-align: center;
+        align-self: center;
+    }
+
+    #top-pic {
+        max-width: 80%;
+        height: auto;
+    }
+
+    #shortdesc {
+        margin: 10px;
+        max-width: 90%;
+    }
+
+    .featuresection{
+        flex-direction: column;   
+        margin: 20px;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .featuresectionsp {
+        flex-direction: column;   
+        gap: 20px;
+    }
+
+    .pic {
+        max-width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .section {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 20px;
+    }
+
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    pre {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+    font-size: 14px;
+    overflow-x: auto;
+    }
+}
+

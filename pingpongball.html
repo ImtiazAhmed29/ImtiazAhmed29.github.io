@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pingpongball.css">
-    <title>Imtiaz Ahmed - Marble Sorter</title>
+    <title>Imtiaz Ahmed - Ping Pong Ball Circulator</title>
 </head>
 <body>
     <div id="navbar">
@@ -46,9 +46,9 @@
         </div>
     </div>
     <div class="featuresection" id="launcher">
-        <div>
+        <div id="launchermedia">
             <div>
-                <img src="launchercad.png">
+                <img class="pic" src="launchercad.png">
             </div>
             <div id="launcherpics2">
                 <img src="launcherback.png">
@@ -70,11 +70,13 @@
         </div>
     </div>
     <div class="featuresection" id="sensing/recirculation">
-        <div>
-            <video id="demovid" src="hooptest.mp4" controls></video>
-        </div>
-        <div>
-            <img src="catcher.png">
+        <div id="hoopmedia">
+            <div>
+                <video class="demovid" src="hooptest.mp4" controls></video>
+            </div>
+            <div>
+                <img src="catcher.png">
+            </div>
         </div>
         <div>
             <p>
@@ -93,15 +95,15 @@
     
     <div class="cardsection" id="launcherprototype">
         <div class="prototypecard">
-            <img src="mk1.png">
+            <img class="pic" src="mk1.png">
             <p>Our initial launcher prototype was a static circular track with placement for a motor and flywheel above it. This was meant for testing of the single-flywheel concept, which was successful, but difficult to modify or add attachments to as the project evolved.</p>
         </div>
         <div class="prototypecard">
-            <img src="mk2.png">
+            <img class="pic" src="mk2.png">
             <p>Our second launcher prototype used a base and a moveable track, allowing for a variable launch angle. Additionally, holes were put on each end of the track to allow for future press-fit attachments like increased track length. This worked well, but failed to fully deal with the issue of lost momentum after multiple balls went through in succession.</p>
         </div>
         <div class="prototypecard">
-            <img src="mk3.png">
+            <img class="pic" src="mk3.png">
             <p>Our third launcher prototype introduced the separator wheel and track to help control angular momentum loss. These attachments were affixed to the previous prototype using the track holes, removing the need for fully reprinting the launcher. However, the geared motor the track was designed for failed to provide sufficient torque, and the initial separator wheel design was bulky and difficult to feed balls into, resulting in our final redesign as shown above.</p>
         </div>
     </div>
@@ -130,12 +132,14 @@
     </div>
     <div class="section">
         <h2>Results and Improvements</h2>
-        <div>
-            <video id="lastdemovid" src="systemtest.mp4" controls></video>
-        </div>
-         <div class="text-placeholder">
-             <p>The above video shows a partial circulation test of the prototype before the backboard modification. On final demonstration day, the ping pong ball circulator successfully circulated 63 balls in the span of 60 seconds.</p>
-             <p>Future improvements could improve better tuning of the separator control circuit. The circuit failed shortly before the final demonstration, forcing us to provide the separator wheel with full power from a 9 volt battery rather than regulating speed. A separator wheel with better tuning could improve the balance between maintaining angular momentum and maximizing ball throughput.</p>
+        <div class="featuresectionsp">
+            <div>
+                <video class="demovid" src="systemtest.mp4" controls></video>
+            </div>
+            <div class="text-placeholder">
+                <p>The above video shows a partial circulation test of the prototype before the backboard modification. On final demonstration day, the ping pong ball circulator successfully circulated 63 balls in the span of 60 seconds.</p>
+                <p>Future improvements could improve better tuning of the separator control circuit. The circuit failed shortly before the final demonstration, forcing us to provide the separator wheel with full power from a 9 volt battery rather than regulating speed. A separator wheel with better tuning could improve the balance between maintaining angular momentum and maximizing ball throughput.</p>
+            </div>
         </div>
     </div>
 </body>

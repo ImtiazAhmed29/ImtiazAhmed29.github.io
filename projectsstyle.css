@@ -61,31 +61,28 @@ img {
   gap: 20px;
   padding-left: 40px;
   padding-right: 40px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: rgb(81, 81, 81);
 }
 
-#project-card1 {
+.card {
+    display: flex;
+    flex-direction: column;
     padding: 20px;
-    color: rgb(0, 0, 0);
     background-color: rgb(126, 126, 126);
+    align-items: center;
+    text-align: center;
 }
 
 #project-card1:hover {
-    color: rgb(0, 0, 0);
     background-color: rgb(145, 145, 145);
     opacity: 0.5;
 }
 
 img {
-    width: 300px;
-}
-
-#project-card2 {
-    padding: 20px;
-    background-color: rgb(126, 126, 126);
+    max-width: 90%;
 }
 
 #project-card2:hover {
@@ -93,12 +90,25 @@ img {
     opacity: 0.5;
 }
 
-#project-card3 {
-    padding: 20px;
-    background-color: rgb(126, 126, 126);
-}
+
 
 #project-card3:hover {
     background-color: rgb(172, 172, 172);
     opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: row;
+        text-align: right;
+    }
+
+    #menu {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .items {
+        margin: 10px;
+    }
 }

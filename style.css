@@ -21,6 +21,7 @@
 .items{
     margin-left: 20px;
 }
+
 .items:hover {
     opacity: 0.5;
 }
@@ -44,6 +45,9 @@ a {
 }
 
 #namediv p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-right: 30px;
     margin:25px;
     align-content: center;
@@ -88,4 +92,41 @@ a {
 
 .boxtitle {
     font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: row;
+    }
+
+    #menu {
+        flex-direction: column;
+        text-align: right;
+    }
+
+    .items {
+        margin: 10px;
+    }
+    #div2 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #namediv p {
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    #placeholder {
+        width: 80%;
+        max-width: 300px;
+        height: auto;
+        margin-top: 20px;
+    }
+    .boxes {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 15px;
+    }
 }

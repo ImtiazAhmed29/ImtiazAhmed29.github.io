@@ -77,3 +77,66 @@ a {
     height:auto;
     padding: 20px;
 }
+
+
+@media (max-width: 1200px) and (min-width: 769px) {
+    .experiencesection {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 15px;
+    }
+
+    .output {
+        display: flex;
+        max-width: 50%;
+        height: auto;
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 20px;
+    }
+
+    .boxes {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: row;
+        text-align: right;
+    }
+
+    #menu {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .items {
+        margin: 10px;
+    }
+
+    .experiencesection {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 15px;
+    }
+
+    .output {
+        max-width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .boxes {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 15px;
+    }
+}
