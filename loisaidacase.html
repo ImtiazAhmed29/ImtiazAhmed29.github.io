@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pingpongball.css">
+    <title>Imtiaz Ahmed - Environmental Sensor Enclosure</title>
+</head>
+
+<body>
+
+    <div id="navbar">
+        <div id="bartitle">Imtiaz Ahmed</div>
+
+        <div id="menu">
+            <a href="index.html"><div class="items">Home</div></a>
+            <a href="experience.html"><div class="items">Experience</div></a>
+            <a href="projects.html"><div class="items">Projects</div></a>
+        </div>
+    </div>
+
+
+    <div class="title">
+        <h1>Environmental Sensor Enclosure</h1>
+        <h2>CAD: OnShape | Fabrication: Laser Cutting, FDM 3D Printing | Focus: Mechanical Packaging, Thermal Behavior, Manufacturability</h2>
+    </div>
+
+
+    <div class="header" id="sensorheader">
+
+        <div id="shortdesc">
+
+            <h2>
+                Modular environmental sensor enclosure designed for manufacturability,
+                electronics integration, and environmental protection.
+            </h2>
+
+            <h3>
+                Redesigned an environmental sensing enclosure and investigated
+                temperature-measurement discrepancies across enclosure configurations,
+                separating enclosure-induced thermal bias from temperature-dependent
+                sensor error.
+            </h3>
+
+        </div>
+
+        <div class="hero-media">
+            <img id="top-pic" src="placeholdersensor.jpeg"
+                 alt="Environmental sensor enclosure">
+        </div>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>Overview</h2>
+
+        <div class="text-placeholder">
+
+            <p>
+                This project involved the mechanical design and fabrication of an enclosure
+                for an environmental sensing system intended for deployment as part of a
+                wider neighborhood monitoring network. The system integrates environmental
+                sensors, an ESP32-based display, RF hardware, and battery and power
+                electronics within a compact housing.
+            </p>
+
+            <p>
+                The enclosure was developed through multiple design iterations using both
+                laser-cut acrylic and FDM 3D printing. Design decisions considered
+                component accessibility, cable routing, manufacturability, environmental
+                protection, and the thermal environment surrounding the temperature sensor.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="featuresection" id="enclosure-design">
+
+        >
+
+        <div>
+
+            <h2>Existing Design</h2>
+
+            <p>
+                Before Summer 2026, I designed a laser-cuttable sensor case out of acrylic as an initial design to roll out within the lab. The purpose of this was to explore laser-cutting as an initial, rapid and low-cost manufacturing method while demonstrating the air-quality monitor as a fully functioning, fully enclosed product.
+            </p>
+
+            <p>
+                The width of the sensor case was forced by the desire to keep all cables inside the case. The use of a USB-C to USB-A cable to power the board forced us to lengthen the case to accomodate both the CYD, the male head of the USB-C cable, and the bend radius of the cable. Much of the design was forced by screw and sensor placement. The sensor was placed on the side in accordance with Sensirion's advised documentation, with the charging port being placed on the opposite side. The existing power distribution and voltage boost boards used micro USB for charging and USB-A to power the electronics. The USB-A requirement forced us to set aside a significant chunk of internal volume to manage the cable, and the arrangement of the micro-USB port forced us to use a male-to-female extension cable in order to have a charging port on the side. 
+            </p>
+
+            <p>
+                For the interior of the case, a compartmentalized design was used to minimize mechanical or electromagnetic interference between electronics. The sensor was placed on the far left, with a compartment to hold the power board and USB-A cable next to it. Next to that, a compartment was set aside for the antenna wire in order to minimize any potential interference. The micro-USB extension cable was threaded through these compartments and then threaded through a wall with a sleeve in it to prevent it from being pushed inside the case when plugged in. The female end of the wire was exposed to the right wall, allowing charging. To facilitate assembly, I designed a 3D-printed jig to hold the internal walls separating compartments.
+            </p>
+
+        </div>
+        <div>
+            <img class="pic" src="loisaidasensor.png"
+                 alt="CAD model of environmental sensor enclosure">
+        </div>
+    </div>
+
+        
+
+
+    <div class="featuresection" id="enclosure-design">
+
+        <div>
+            <img class="pic" src="caseinjig.png"
+                 alt="CAD model of environmental sensor enclosure">
+        </div>
+
+        <div>
+
+            <h2>Existing Challenges</h2>
+
+            <p>
+                The manufacturing and deployment of 10 laser-cut sensor case prototypes in the lab demonstrated a number of challenges preventing large-scale rollout. Firstly, mechanical assembly times were long, taking upwards of 10 minutes per sensor case, which would be unsustainable for production on a larger scale. Maintenance was also arduous, as the entire case had to be fully disassembled to gain access to ports on the CYD.
+            </p>
+
+            <p>
+                The laser-cutting itself also posed certain challenges. The sharp edges and pointed corners inherent in a laser-cut enclosure cause poor drop resistance, making it likely to be damaged if deployed in homes. 
+            </p>
+
+            <p>
+                Certain aspects of the hardware were also desired to be removed. We were instructed to attempt to remove all screws or other fasteners from the next design to help cut costs. 
+            </p>
+
+            <p>
+                Electrical issues included the stress placed on electrical components due to packaging constraints. The bulky USB-A to USB-C power cable was a key part we wanted to remove, ideally replacing it with a solderable JST connector. Additionally, while not directly mechanically related, the sensor was prone to brown-outs and resets when plugged in and unplugged, which we believed was caused by the T6845-C voltage boost/charge board. All of these factors combined influenced our decision to attempt to procure a new board with a better layout, soldering holes, and better resistance to brown-outs.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="featuresection" id="manufacturing">
+
+        <div>
+
+            <h2>Overall Design Architecture</h2>
+
+            <p>
+                After identifying faster assembly, easier maintenance, and  number of concepts were explored. We considered a design using removable top and bottom walls to allow for improved exposure to connectors and electronics, as well as a design with a removable front module for the CYD to maximize access to it. 
+            </p>
+
+            <p>
+                To check for whether antenna placement mattered, we 3D-printed a box to fit on top of the existing sensors above the antenna, and placed a running power electronics setup inside the box, ensuring that the antenna was both blocked by PLA and exposed to electronics to see if materials or electromagnetic interference impacted transmission range. We did not see any noticable change between open-air and sealed antennas, indicating that a design with the antenna inside the case would be plausible.
+            </p>
+
+            <p>
+                In the end, we converged on a design architecture using an electronics tray with an outer shell covering it. This allowed us to hold the fully exposed electronics as a single unit, whether connected or disconnected, and it would allow us to wire electronics before or after they were placed in the structure regardless of the order, making assembly simpler than the laser-cut design. It would also ensure the outer protective shell would be one full piece, providing improved fall protection.
+            </p>
+
+        </div>
+
+        <div>
+            <img class="pic" src="conceptual.png"
+                 alt="Environmental sensor electronics assembly">
+        </div>
+
+    </div>
+
+
+    <div class="featuresection" id="electronics-integration">
+
+        <div id="launchermedia">
+            <img class="pic" src="sensorcasing.png"alt="Integrated sensor electronics and power system">
+            <img class="pic" src="explodedskeleton.png">
+        </div>
+
+        <div>
+
+            <h2>Detail Design and Integration</h2>
+
+            <p>
+                Key design constraints included a side-oriented sensor and a USB-C port on the opposite side. The desire to have minimal seams visible from the front influenced our decision to have our case open from the back, forcing our skeleton to be able to slide screen-first into the protective case from the back. Additionally, part-level constraints included the desire to have flat surfaces on each part to improve manufacturability. 
+            </p>
+
+            <p>
+                Physical integration required accounting for connector access, wire
+                routing, available enclosure volume, and the locations of heat-producing
+                components relative to the temperature sensor.
+            </p>
+
+            
+            <p>
+                As a result, our electronics tray had a large flat surface on the front for mounting the CYD. Behind it 
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="featuresection" id="environmental-protection">
+
+        <div>
+
+            <h2>Fastening and Sealing</h2>
+            <p>
+                The zero-fastener rule forced us to rely on and heavily iterate upon snap-fit and dovetail designs. 
+                The antenna mount and sensor mount were attached using dovetails allowing them to be slotted in from the side of the electronics tray. 
+            </p>
+            <p>
+                Additionally, a combination of snap-fits and dovetails were also used to hold the CYD. 
+                The initial screen mount design was a plate using snap-fits to hold the CYD, with separate, smaller dovetails being used to hold the screen mount to the main electronics tray. 
+                After this design proved to be difficult to manufacture, a new solution was to use four small, printable fasteners, with two placed on the top and two placed on the bottom, holding the screen in place at its four corners with slots. 
+                The fasteners had dovetails on one end to slot into the electronics tray.
+            </p>
+            <p>
+                Snap-fits were also used for the sensor mount, allowing the sensor to be easily pushed in and held in place far more consistently than the laser-cut version. According to the sensor documentation, a sealing gasket would be necessary to prevent a short circuit of airflow or measurement of internal rather than ambient airflow. Because of this, we manufactured silicone sealing gaskets using a custom 3D-printed mold of 25 gaskets with a cover to ensure constant thickness. These gaskets were designed to fit perfectly under the sensor mount.
+            </p>
+            <p>
+                Snap-fits were also used to hold the power distribution board. Initially, a friction/press fit was desired, with a snap fit over the boost components only serving to augment it. However, this was found to insufficiently grasp the power board, so a new snap-fit design was made using two snap-fits holding each outer corner of the power board.
+            </p>
+            
+                
+            
+
+        </div>
+
+        <div id="launchermedia">
+            <img class="pic" src="liditeration.png"alt="Integrated sensor electronics and power system">
+            <img class="pic" src="boarditeration.png">
+        </div>
+
+    </div>
+
+
+    <div class="featuresection" id="electronics-integration">
+        <div>
+            <img class="pic" src="discrepancies.png"
+                 alt="Environmental sensor enclosure prototype">
+        </div>
+        
+
+        <div>
+<h2>Thermal Investigation</h2>
+            <p>
+                During testing, the temperature reported by the sensor differed between
+                the 3D-printed and laser-cut enclosure configurations. The 3D-printed
+                configuration consistently produced higher readings, leading to the
+                initial hypothesis that increased thermal isolation around the sensor
+                was creating a systematic thermal bias.
+            </p>
+
+            <p>
+                New enclosure configurations were developed to bring the temperature
+                sensor closer to the outer wall and increase its exposure to the
+                surrounding environment. These changes produced some improvement, but
+                the measured temperature remained higher than expected.
+            </p>
+
+            <p>
+                This indicated that enclosure geometry was not the sole source of the
+                discrepancy. The investigation was therefore expanded to include an
+                independent reference thermometer.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="section" id="testing">
+
+        
+
+        <div>
+
+            <h2>Sensor Characterization</h2>
+
+            <p>
+                Comparison against a reference thermometer showed that the existing
+                acrylic enclosure also produced readings above the reference temperature.
+                This demonstrated that the observed error could not be attributed solely
+                to the thermal behavior of the enclosure.
+            </p>
+
+            <p>
+                Additional testing of the sensor at a lower temperature showed that the
+                measurement discrepancy changed with operating temperature rather than
+                behaving as a simple constant offset.
+            </p>
+
+            <p>
+                The investigation therefore shifted from enclosure redesign alone toward
+                characterizing temperature-dependent sensor error and determining an
+                appropriate calibration approach.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>Engineering Challenges</h2>
+
+        <div class="text-placeholder">
+
+            <p>
+                The primary challenge was distinguishing between errors caused by the
+                mechanical enclosure and errors inherent to the sensing system. A change
+                in enclosure geometry could affect the sensor's thermal environment,
+                making it necessary to separate systematic enclosure-induced bias from
+                temperature-dependent sensor error.
+            </p>
+
+            <p>
+                Another challenge was designing around real hardware rather than idealized
+                CAD geometry. Component dimensions, wiring, assembly sequence, sealing,
+                heat generation, and sensor placement all affected the behavior of the
+                completed system.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>Current Status and Future Work</h2>
+
+        <div class="text-placeholder">
+
+            <p>
+                The project is currently in the characterization and calibration stage.
+                Testing established that both the enclosure configuration and the sensor
+                itself contribute to the observed temperature-measurement discrepancy.
+            </p>
+
+            <p>
+                Current work focuses on determining the relationship between sensor
+                measurements and reference temperatures across a range of operating
+                conditions. Further enclosure iterations may be pursued if testing
+                demonstrates that thermal effects remain significant after calibration.
+            </p>
+
+            <p>
+                Future development could include broader temperature characterization,
+                calibration validation, long-term environmental testing, and refinement
+                of the enclosure for repeated outdoor deployment.
+            </p>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>

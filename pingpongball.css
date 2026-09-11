@@ -45,7 +45,7 @@ a {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-#marbleheader {
+.header {
     display: flex;
     font-family: Georgia, 'Times New Roman', Times, serif;
     justify-content: center;
@@ -93,6 +93,7 @@ a {
 #launchermedia {
     display:flex;
     flex-direction: column;
+    max-width: 40%;
 }
 
 img {
@@ -188,7 +189,6 @@ video {
 @media (max-width: 912px) {
     #navbar {
         flex-direction: row;
-        text-align: right;
     }
 
     #menu {

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pingpongball.css">
+    <title>Imtiaz Ahmed - Ball-Launching VEX Robot</title>
+</head>
+<body>
+
+<div id="navbar">
+    <div id="bartitle">Imtiaz Ahmed</div>
+    <div id="menu">
+        <a href="index.html"><div class="items">Home</div></a>
+        <a href="experience.html"><div class="items">Experience</div></a>
+        <a href="projects.html"><div class="items">Projects</div></a>
+    </div>
+</div>
+
+<div class="title">
+    <h1>Ball-Launching VEX Robot</h1>
+    <h2>Platform: VEX | CAD: Onshape | Fabrication: Laser Cutting, 3D Printing | Control: RobotC</h2>
+</div>
+
+<div class="header" id="balllauncherheader">
+    <div id="shortdesc">
+        <h2>Side-feeding ball-launching robot integrating intake, vertical transport, and elastic-powered launching mechanisms.</h2>
+        <h3>Designed as a complete electromechanical system that collects balls, routes them through a vertical transfer channel, and launches them through a side-mounted exit.</h3>
+    </div>
+    <div class="hero-media">
+        <img id="top-pic" src="vexrobotplaceholder.png" alt="CAD assembly of ball-launching VEX robot">
+    </div>
+</div>
+
+<div class="section">
+    <h2>Overview</h2>
+    <div class="text-placeholder">
+        <p>This project was developed as a ball-handling and launching robot using the VEX platform. The complete system integrated a drivetrain, dual-roller intake, vertical ball-transfer mechanism, and mechanically actuated launcher controlled through RobotC teleoperation.</p>
+        <p>The robot was designed around the complete path of the ball. Balls were collected through the intake, transferred upward through a laser-cut channel, routed into a side-mounted launching mechanism, and accelerated through the exit using stored elastic energy.</p>
+    </div>
+</div>
+
+<div class="featuresection" id="intake-system">
+    <div>
+        <img class="pic" src="intake.png" alt="Dual-roller intake system">
+    </div>
+    <div>
+        <h2>Ball Intake System</h2>
+        <p>The front of the robot used a dual-roller intake to collect balls and direct them into the vertical transfer system.</p>
+        <p>The intake was integrated into a custom laser-cut structural assembly that constrained the ball path while providing mounting points for the rollers and supporting components.</p>
+        <p>The intake and transfer mechanisms were designed together so collected balls entered the upward channel with sufficient alignment for continued transport toward the launcher.</p>
+
+    <p>A vertical transfer channel routed balls from the intake toward the launcher. The channel was constructed from laser-cut wood components and supported using custom 3D-printed mounting brackets.</p>
+        <p>The channel geometry constrained the ball during upward transport and maintained alignment as it approached the side opening leading into the launching mechanism.</p>
+        <p>Designing the transfer path required coordinating the intake position, channel geometry, and launcher entry point so each subsystem could pass the ball to the next without manual repositioning.</p>
+
+    </div>
+</div>
+
+
+<div class="featuresection" id="launcher-system">
+    <div>
+        <img class="pic" src="puncher.png" alt="Elastic-powered rack-and-pinion launcher">
+    </div>
+    <div>
+        <h2>Elastic-Powered Launcher</h2>
+        <p>The launcher used stored elastic energy to accelerate the ball through a side-mounted exit. A rack-and-pinion mechanism converted mechanical motion into linear ball acceleration along the launching path.</p>
+        <p>The side-feeding configuration allowed the vertical transfer system to deliver balls directly into the launcher without requiring the entire robot to be arranged around a front-facing exit.</p>
+        <p>The ball entry location, linear travel path, and exit geometry had to be coordinated so that the transfer system and launcher operated as a single integrated mechanism.</p>
+    </div>
+</div>
+
+
+<div class="section">
+    <h2>Engineering Challenges</h2>
+    <div class="text-placeholder">
+        <p>The primary challenge was integrating multiple mechanisms into a continuous ball path. A successful intake was not sufficient unless balls could also be transferred into the launcher with consistent alignment.</p>
+        <p>The vertical channel and side-mounted launcher introduced packaging constraints, requiring careful placement of structural components, motors, custom brackets, and launching hardware.</p>
+        <p>The project also required combining standard VEX hardware with laser-cut and 3D-printed components, creating interfaces between different fabrication methods and mechanical systems.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Design Takeaways</h2>
+    <div class="featuresectionsp">
+        <div>
+            <video class="demovid" src="teleop.mp4" controls></video>
+        </div>
+        <div class="text-placeholder">
+            <p>This project demonstrated the importance of system-level mechanical design. The intake, transfer mechanism, and launcher could not be optimized independently because each subsystem depended on how effectively it passed the ball to the next.</p>
+            <p>The final design combined off-the-shelf VEX components with custom laser-cut and 3D-printed parts, providing experience in CAD integration, mechanism design, fabrication, and electromechanical system assembly.</p>
+            <p>Future improvements could focus on refining ball alignment, improving launch consistency, and simplifying the interfaces between the transfer and launching subsystems.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
